@@ -8,6 +8,8 @@ function App() {
     name: "",
     email: "",
     phone: "",
+    plan: "arcade",
+    rate: "monthly",
   });
 
   const paginationInfo = [
@@ -63,6 +65,8 @@ function App() {
       };
     });
   }
+
+  console.table(formInput);
 
   const paginationElement = paginationInfo.map((page) => {
     return (

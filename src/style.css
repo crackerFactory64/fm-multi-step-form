@@ -183,6 +183,118 @@ form {
 label {
   color: var(--color-primary-700);
   display: grid;
+  gap: 0.25rem;
+}
+
+.radio-label {
+  border: 1px solid var(--color-neutral-400);
+  border-radius: 0.5rem;
+  color: var(--color-neutral-500);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto 1fr;
+  padding: 1rem;
+}
+
+.radio-label.selected {
+  background-color: var(--color-neutral-200);
+  border-color: var(--color-primary-700);
+}
+
+.radio-label input {
+  outline: 0;
+  opacity: 0;
+}
+
+.radio-container {
+  display: grid;
+}
+
+.radio-container > * {
+  grid-area: 1 / -1;
+  place-content: center;
+}
+
+.radio-container > img {
+  z-index: 1000;
+  margin-block-end: auto;
+  margin-inline: auto;
+}
+
+.radio-label__content {
+  display: grid;
+  margin-block: auto;
+  margin-inline-end: auto;
+  order: 1000;
+}
+
+.radio-label__name {
+  color: var(--font-color-title);
+  font-weight: var(--font-weight-bold);
+}
+
+.radio-label small {
+  color: var(--color-primary-700);
+  font-weight: var(--font-weight-medium);
+}
+
+.toggle-container {
+  background-color: var(--color-neutral-200);
+  border-radius: 0.5rem;
+  display: grid;
+  font-weight: var(--font-weight-medium);
+  gap: 1.5rem;
+  grid-template-columns: 1fr auto 1fr;
+  padding: 1rem;
+}
+
+.toggle-container label {
+  color: var(--color-neutral-500);
+}
+
+.toggle-container label.selected {
+  color: var(--color-primary-700);
+}
+
+.toggle-container > label:first-of-type {
+  margin-inline-start: auto;
+}
+
+.toggle-container input {
+  position: absolute;
+  opacity: 0;
+}
+
+.toggle {
+  background-color: var(--color-primary-700);
+  border-radius: 100rem;
+  display: grid;
+  padding: 0.2rem;
+  height: 1.25rem;
+  margin-block: auto;
+  width: 2.4rem;
+}
+
+.toggle::after {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: block;
+  content: "";
+  background-color: var(--color-neutral-100);
+  width: 0.8rem;
+  margin-block: auto;
+}
+
+.toggle.yearly::after {
+  margin-inline-start: auto;
+}
+
+input[type="text"] {
+  border-radius: 0.3rem;
+  border: 0.1rem solid var(--color-neutral-500);
+  color: var(--color-neutral-500);
+  font-weight: var(--font-weight-medium);
+  padding: 0.5rem;
 }
 
 h1 {
