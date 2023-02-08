@@ -10,6 +10,8 @@ export default function Content(props) {
       <h1>{title}</h1>
       <p>{description}</p>
       <form>
+        {/*STEP ONE*/}
+
         {number === 1 && (
           <>
             <label htmlFor="name">
@@ -47,6 +49,7 @@ export default function Content(props) {
             </label>
           </>
         )}
+        {/*STEP TWO*/}
 
         {number === 2 && (
           <>
@@ -165,6 +168,8 @@ export default function Content(props) {
             </div>
           </>
         )}
+
+        {/*STEP THREE*/}
       </form>
     </>
   );
