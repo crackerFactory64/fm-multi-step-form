@@ -4,6 +4,11 @@ import Content from "./Content";
 
 function App() {
   const [currentPage, setCurrentPage] = React.useState(1);
+  const [formInput, setFormInput] = React.useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
 
   const paginationInfo = [
     { number: 1, title: "Your Info" },
@@ -49,6 +54,16 @@ function App() {
     }
   }
 
+  function handleChange(e) {
+    const { value, name } = e.target;
+    setFormInput((prevInput) => {
+      return {
+        ...prevInput,
+        [name]: value,
+      };
+    });
+  }
+
   const paginationElement = paginationInfo.map((page) => {
     return (
       <Pagination
@@ -67,6 +82,8 @@ function App() {
         number={page.number}
         title={page.title}
         description={page.description}
+        handleChange={(e) => handleChange(e)}
+        formInput={formInput}
       />
     );
   });
