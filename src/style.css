@@ -15,6 +15,8 @@
 
   --font-family: "Ubuntu", Helvetica, sans-serif;
   --font-size-body: 1rem;
+  --font-color-body: var(--color-neutral-500);
+  --font-color-title: var(--color-primary-700);
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
@@ -100,8 +102,8 @@ select {
 /* RESET END */
 
 body {
-  background-color: var(--color-primary-200);
-  color: var(--color-primary-700);
+  background-color: var(--color-neutral-300);
+  color: var(--font-color-body);
   display: grid;
   font-family: var(--font-family);
   font-size: var(--font-size-body);
@@ -121,6 +123,7 @@ body {
 .form-section__header {
   background-image: url("./images/bg-sidebar-mobile.svg");
   background-size: cover;
+  display: grid;
   min-height: 20dvh;
   min-height: 20vh;
 }
@@ -130,8 +133,8 @@ body {
   gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
   list-style: none;
-  margin: auto;
-  max-width: 50vw;
+  margin-block: 2rem auto;
+  margin-inline: auto;
   padding: 0;
   place-items: center;
 }
@@ -142,25 +145,38 @@ body {
 
 .pagination__number {
   aspect-ratio: 1;
-  border: 0.1rem solid;
   border-radius: 50%;
+  border: 0.1rem solid;
   color: var(--color-neutral-100);
   display: grid;
   font-weight: var(--font-weight-bold);
   margin: auto;
-  margin-block-start: 2rem;
   place-content: center;
-  width: 2.5rem;
+  width: 2.2rem;
 }
 
 .pagination__number.selected {
   background-color: var(--color-primary-200);
   border-color: var(--color-primary-200);
-  color: var(--color-neutral-700);
+  color: var(--color-primary-700);
 }
 
 .pagination__label {
   display: none;
+}
+
+.form-section__main {
+  background-color: var(--color-neutral-100);
+  border-radius: 1rem;
+  margin-inline: auto;
+  padding: 2rem;
+  transform: translateY(-4rem);
+  width: calc(100% - 2rem);
+}
+
+h1 {
+  color: var(--font-color-title);
+  font-size: calc(var(--font-size-body) * 1.66);
 }
 
 .form-section__footer {
