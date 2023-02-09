@@ -1,6 +1,7 @@
 import arcade from "./images/icon-arcade.svg";
 import advanced from "./images/icon-advanced.svg";
 import pro from "./images/icon-pro.svg";
+import checkmark from "./images/icon-checkmark.svg";
 
 import React from "react";
 export default function Content(props) {
@@ -68,7 +69,7 @@ export default function Content(props) {
                 </p>
                 {formInput.rate === "yearly" && <small>2 months free</small>}
               </div>
-              <div className="radio-container">
+              <div className="input-contain">
                 <img src={arcade} />
                 <input
                   type="radio"
@@ -95,7 +96,7 @@ export default function Content(props) {
                 </p>
                 {formInput.rate === "yearly" && <small>2 months free</small>}
               </div>
-              <div className="radio-container">
+              <div className="input-contain">
                 <img src={advanced} />
                 <input
                   type="radio"
@@ -122,7 +123,7 @@ export default function Content(props) {
                 </p>
                 {formInput.rate === "yearly" && <small>2 months free</small>}
               </div>
-              <div className="radio-container">
+              <div className="input-contain">
                 <img src={pro} />
                 <input
                   type="radio"
@@ -170,6 +171,92 @@ export default function Content(props) {
         )}
 
         {/*STEP THREE*/}
+        {number === 3 && (
+          <>
+            <label
+              htmlFor="online"
+              className={
+                formInput.online ? "checkbox-label selected" : "checkbox-label"
+              }
+            >
+              <div className="checkmark">
+                <input
+                  type="checkbox"
+                  name="online"
+                  id="online"
+                  onChange={handleChange}
+                />
+                <div className="checkmark__checkbox">
+                  <img src={checkmark} alt="" />
+                </div>
+              </div>
+              <div>
+                <p className="checkbox-label__name">Online service</p>
+                <p className="checkbox-label__desc">
+                  Access to multiplayer games
+                </p>
+              </div>
+              <p className="checkbox-label__price">
+                {formInput.rate === "monthly" ? "+$1/mo" : "+$10/yr"}
+              </p>
+            </label>
+
+            <label
+              htmlFor="storage"
+              className={
+                formInput.storage ? "checkbox-label selected" : "checkbox-label"
+              }
+            >
+              <div className="checkmark">
+                <input
+                  type="checkbox"
+                  name="storage"
+                  id="storage"
+                  onChange={handleChange}
+                />
+                <div className="checkmark__checkbox">
+                  <img src={checkmark} alt="" />
+                </div>
+              </div>
+              <div>
+                <p className="checkbox-label__name">Larger storage</p>
+                <p className="checkbox-label__desc">Extra 1TB of cloud save</p>
+              </div>
+              <p className="checkbox-label__price">
+                {formInput.rate === "monthly" ? "+$2/mo" : "+$20/yr"}
+              </p>
+            </label>
+
+            <label
+              htmlFor="profile"
+              className={
+                formInput.profile ? "checkbox-label selected" : "checkbox-label"
+              }
+            >
+              <div className="checkmark">
+                <input
+                  type="checkbox"
+                  name="profile"
+                  id="profile"
+                  onChange={handleChange}
+                />
+                <div className="checkmark__checkbox">
+                  <img src={checkmark} alt="" />
+                </div>
+              </div>
+              <div>
+                <p className="checkbox-label__name">Customizable profile</p>
+                <p className="checkbox-label__desc">
+                  Custom theme on your profile
+                </p>
+              </div>
+              <p className="checkbox-label__price">
+                {formInput.rate === "monthly" ? "+$2/mo" : "+$20/yr"}
+              </p>
+            </label>
+          </>
+        )}
+        {/*STEP FOUR */}
       </form>
     </>
   );

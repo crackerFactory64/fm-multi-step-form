@@ -169,9 +169,14 @@ body {
   background-color: var(--color-neutral-100);
   border-radius: 1rem;
   margin-inline: auto;
-  padding: 2rem;
+  padding: 1.5rem;
   transform: translateY(-4rem);
   width: calc(100% - 2rem);
+}
+
+h1 {
+  color: var(--font-color-title);
+  font-size: calc(var(--font-size-body) * 1.66);
 }
 
 form {
@@ -180,23 +185,36 @@ form {
   margin-block-start: 1.5rem;
 }
 
+input[type="text"] {
+  border-radius: 0.3rem;
+  border: 0.1rem solid var(--color-neutral-500);
+  color: var(--color-neutral-500);
+  font-weight: var(--font-weight-medium);
+  padding: 0.5rem;
+}
+
 label {
   color: var(--color-primary-700);
   display: grid;
   gap: 0.25rem;
 }
 
-.radio-label {
+.radio-label,
+.checkbox-label {
   border: 1px solid var(--color-neutral-400);
   border-radius: 0.5rem;
   color: var(--color-neutral-500);
   display: grid;
   gap: 1rem;
-  grid-template-columns: auto 1fr;
   padding: 1rem;
 }
 
-.radio-label.selected {
+.radio-label {
+  grid-template-columns: auto 1fr;
+}
+
+.radio-label.selected,
+.checkbox-label.selected {
   background-color: var(--color-neutral-200);
   border-color: var(--color-primary-700);
 }
@@ -228,7 +246,8 @@ label {
   order: 1000;
 }
 
-.radio-label__name {
+.radio-label__name,
+.checkbox-label__name {
   color: var(--font-color-title);
   font-weight: var(--font-weight-bold);
 }
@@ -289,17 +308,49 @@ label {
   margin-inline-start: auto;
 }
 
-input[type="text"] {
-  border-radius: 0.3rem;
-  border: 0.1rem solid var(--color-neutral-500);
-  color: var(--color-neutral-500);
-  font-weight: var(--font-weight-medium);
-  padding: 0.5rem;
+.checkbox-label {
+  --space: 0.66rem;
+  gap: var(--space);
+  grid-template-columns: auto 1fr auto;
+  padding: var(--space);
 }
 
-h1 {
-  color: var(--font-color-title);
-  font-size: calc(var(--font-size-body) * 1.66);
+.checkbox-label > div {
+  display: grid;
+}
+
+.checkbox-label input {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkmark {
+  display: grid;
+}
+
+.checkmark__checkbox {
+  aspect-ratio: 1;
+  border-radius: 0.3rem;
+  border: 1px solid var(--color-neutral-400);
+  display: grid;
+  margin: auto;
+  place-content: center;
+  width: 1.3rem;
+}
+
+.checkbox-label.selected .checkmark__checkbox {
+  background-color: var(--color-primary-500);
+}
+
+.checkbox-label__desc {
+  font-size: 0.8rem;
+}
+
+.checkbox-label__price {
+  color: var(--color-primary-500);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-medium);
+  margin: auto;
 }
 
 .form-section__footer {

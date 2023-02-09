@@ -10,6 +10,9 @@ function App() {
     phone: "",
     plan: "arcade",
     rate: "monthly",
+    online: false,
+    storage: false,
+    profile: false,
   });
 
   const paginationInfo = [
@@ -57,13 +60,23 @@ function App() {
   }
 
   function handleChange(e) {
-    const { value, name } = e.target;
-    setFormInput((prevInput) => {
-      return {
-        ...prevInput,
-        [name]: value,
-      };
-    });
+    if (e.target.type === "checkbox") {
+      const { name, checked } = e.target;
+      setFormInput((prevInput) => {
+        return {
+          ...prevInput,
+          [name]: checked,
+        };
+      });
+    } else {
+      const { value, name } = e.target;
+      setFormInput((prevInput) => {
+        return {
+          ...prevInput,
+          [name]: value,
+        };
+      });
+    }
   }
 
   console.table(formInput);
