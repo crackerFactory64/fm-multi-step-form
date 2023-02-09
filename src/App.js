@@ -79,8 +79,6 @@ function App() {
     }
   }
 
-  console.table(formInput);
-
   const paginationElement = paginationInfo.map((page) => {
     return (
       <Pagination
