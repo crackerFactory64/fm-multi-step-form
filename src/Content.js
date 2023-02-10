@@ -155,7 +155,7 @@ export default function Content(props) {
               {formInput.rate === "yearly" && <small>2 months free</small>}
             </div>
             <div className="radio-container">
-              <img src={arcade} />
+              <img src={arcade} alt="" />
               <input
                 type="radio"
                 name="plan"
@@ -182,7 +182,7 @@ export default function Content(props) {
               {formInput.rate === "yearly" && <small>2 months free</small>}
             </div>
             <div className="radio-container">
-              <img src={advanced} />
+              <img src={advanced} alt="" />
               <input
                 type="radio"
                 name="plan"
@@ -207,7 +207,7 @@ export default function Content(props) {
               {formInput.rate === "yearly" && <small>2 months free</small>}
             </div>
             <div className="radio-container">
-              <img src={pro} />
+              <img src={pro} alt="" />
               <input
                 type="radio"
                 name="plan"
@@ -379,7 +379,7 @@ export default function Content(props) {
       {/*COMPLETE*/}
       {isComplete && (
         <div className="complete">
-          <img src={complete} />
+          <img src={complete} alt="" />
           <h1>Thank you!</h1>
           <p>
             Thanks for confirming your subscription! We hope you have fun using
