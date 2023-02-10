@@ -138,7 +138,7 @@ export default function Content(props) {
       {/*STEP TWO*/}
 
       {!isComplete && number === 2 && (
-        <form>
+        <form className="plan-form">
           <label
             htmlFor="arcade"
             className={
@@ -354,25 +354,25 @@ export default function Content(props) {
             {formInput.online && (
               <div className="order-summary__row">
                 <p>Online service</p>
-                <p>{orderSummary.onlinePrice}</p>
+                <p>+{orderSummary.onlinePrice}</p>
               </div>
             )}
             {formInput.storage && (
               <div className="order-summary__row">
                 <p>Larger storage</p>
-                <p>{orderSummary.storagePrice}</p>
+                <p>+{orderSummary.storagePrice}</p>
               </div>
             )}
             {formInput.profile && (
               <div className="order-summary__row">
                 <p>Customizable profile</p>
-                <p>{orderSummary.profilePrice}</p>
+                <p>+{orderSummary.profilePrice}</p>
               </div>
             )}
           </div>
           <div className="order-summary__row order-summary__total">
             <p>Total (per {formInput.rate.slice(0, -2)})</p>
-            <p>{orderSummary.totalPrice}</p>
+            <p>+{orderSummary.totalPrice}</p>
           </div>
         </>
       )}
