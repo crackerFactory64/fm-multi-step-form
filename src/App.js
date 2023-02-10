@@ -86,6 +86,10 @@ function App() {
     setIsComplete(true);
   }
 
+  function backToPlanSelect() {
+    setCurrentPage(2);
+  }
+
   function handleChange(e) {
     if (e.target.type === "checkbox") {
       const { name, checked } = e.target;
@@ -95,6 +99,17 @@ function App() {
           [name]: checked,
         };
       });
+    } else if (e.target.type === "button") {
+      const newRate = formInput.rate === "monthly" ? "yearly" : "monthly";
+
+      setFormInput((prevInput) => {
+        return {
+          ...prevInput,
+          rate: newRate,
+        };
+      });
+
+      console.log(formInput);
     } else {
       const { value, name } = e.target;
       setFormInput((prevInput) => {
@@ -127,6 +142,7 @@ function App() {
         handleChange={(e) => handleChange(e)}
         formInput={formInput}
         isComplete={isComplete}
+        backToPlanSelect={backToPlanSelect}
       />
     );
   });

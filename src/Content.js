@@ -6,8 +6,15 @@ import complete from "./images/icon-thank-you.svg";
 
 import React from "react";
 export default function Content(props) {
-  const { isComplete, title, description, number, handleChange, formInput } =
-    props;
+  const {
+    isComplete,
+    title,
+    description,
+    number,
+    handleChange,
+    formInput,
+    backToPlanSelect,
+  } = props;
 
   function toTitleCase(string) {
     return string[0].toUpperCase() + string.slice(1);
@@ -224,11 +231,13 @@ export default function Content(props) {
                 onChange={handleChange}
               />
             </label>
-            <div
+            <button
+              type="button"
               className={
                 formInput.rate === "monthly" ? "toggle" : "toggle yearly"
               }
-            ></div>
+              onClick={handleChange}
+            ></button>
             <label
               htmlFor="yearly"
               className={formInput.rate === "yearly" ? "selected" : ""}
@@ -338,7 +347,7 @@ export default function Content(props) {
           <div className="order-summary">
             <p className="order-summary__name">{orderSummary.orderName}</p>
             <div className="order-summary__row">
-              <button>Change</button>
+              <button onClick={backToPlanSelect}>Change</button>
               <p>{orderSummary.planPrice}</p>
             </div>
             <hr></hr>
