@@ -204,7 +204,7 @@ label {
 
 .text-label__error-msg {
   color: var(--color-primary-400);
-  font-size: 0.85rem;
+  font-size: calc(var(--font-size-body * 0.85));
   font-weight: var(--font-weight-bold);
   margin-block: auto;
   margin-inline-start: auto;
@@ -388,12 +388,12 @@ input[type="text"]:placeholder-shown.error {
 }
 
 .checkbox-label__desc {
-  font-size: 0.8rem;
+  font-size: calc(var(--font-size) * 0.8);
 }
 
 .checkbox-label__price {
   color: var(--color-primary-500);
-  font-size: 0.8rem;
+  font-size: calc(var(--font-size) * 0.8);
   font-weight: var(--font-weight-medium);
   margin: auto;
 }
@@ -569,7 +569,11 @@ input[type="text"]:placeholder-shown.error {
   }
 
   h1 {
-    font-size: 2.66rem;
+    font-size: calc(var(--font-size-body) * 2);
+  }
+
+  input[type="text"] {
+    padding: 1rem;
   }
 
   .plan-form {
