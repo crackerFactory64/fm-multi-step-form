@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/fm-multi-step-form/static/css/main.073c9b0a.css",
-    "main.js": "/fm-multi-step-form/static/js/main.610f6ea0.js",
-    "static/js/787.99f8e4fa.chunk.js": "/fm-multi-step-form/static/js/787.99f8e4fa.chunk.js",
-    "static/media/logo.svg": "/fm-multi-step-form/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/fm-multi-step-form/static/css/main.0afc15a1.css",
+    "main.js": "/fm-multi-step-form/static/js/main.269b1cba.js",
+    "static/media/bg-sidebar-desktop.svg": "/fm-multi-step-form/static/media/bg-sidebar-desktop.6918153f38678372ceb1.svg",
+    "static/media/bg-sidebar-mobile.svg": "/fm-multi-step-form/static/media/bg-sidebar-mobile.ad41661b40ca0b967f3a.svg",
+    "static/media/icon-advanced.svg": "/fm-multi-step-form/static/media/icon-advanced.705bd10c4c1f688871d729633f0ca4ae.svg",
+    "static/media/icon-thank-you.svg": "/fm-multi-step-form/static/media/icon-thank-you.ee753f231cc5a5789b8eb922a96472c0.svg",
     "index.html": "/fm-multi-step-form/index.html",
-    "main.073c9b0a.css.map": "/fm-multi-step-form/static/css/main.073c9b0a.css.map",
-    "main.610f6ea0.js.map": "/fm-multi-step-form/static/js/main.610f6ea0.js.map",
-    "787.99f8e4fa.chunk.js.map": "/fm-multi-step-form/static/js/787.99f8e4fa.chunk.js.map"
+    "static/media/icon-pro.svg": "/fm-multi-step-form/static/media/icon-pro.2e7e377da9c658d608624304a0f8dae6.svg",
+    "static/media/icon-arcade.svg": "/fm-multi-step-form/static/media/icon-arcade.a08c098289a31bb2f66d675be71565b3.svg",
+    "static/media/icon-checkmark.svg": "/fm-multi-step-form/static/media/icon-checkmark.6ba72db67010be44885b1ad4473ab4a8.svg",
+    "main.0afc15a1.css.map": "/fm-multi-step-form/static/css/main.0afc15a1.css.map",
+    "main.269b1cba.js.map": "/fm-multi-step-form/static/js/main.269b1cba.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.610f6ea0.js"
+    "static/css/main.0afc15a1.css",
+    "static/js/main.269b1cba.js"
   ]
 }
