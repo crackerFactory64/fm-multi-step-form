@@ -108,9 +108,11 @@ function App() {
       <header className="form-section__header">
         <ul className="header__pagination">{paginationElement}</ul>
       </header>
-      <main className="form-section__main">
-        {contentEl.filter((content) => content.props.number === currentPage)}
-      </main>
+      <div>
+        <main className="form-section__main">
+          {contentEl.filter((content) => content.props.number === currentPage)}
+        </main>
+      </div>
       <footer className="form-section__footer">
         <button
           className={currentPage > 1 ? "footer__back" : "footer__back hidden"}

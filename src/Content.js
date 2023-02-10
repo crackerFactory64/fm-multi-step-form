@@ -319,36 +319,38 @@ export default function Content(props) {
       )}
       {/*STEP FOUR */}
       {number === 4 && (
-        <div className="order-summary">
-          <p>{orderSummary.orderName}</p>
-          <div className="order-summary__row">
-            <button>Change</button>
-            <p>{orderSummary.planPrice}</p>
+        <>
+          <div className="order-summary">
+            <p className="order-summary__name">{orderSummary.orderName}</p>
+            <div className="order-summary__row">
+              <button>Change</button>
+              <p>{orderSummary.planPrice}</p>
+            </div>
+            <hr></hr>
+            {formInput.online && (
+              <div className="order-summary__row">
+                <p>Online service</p>
+                <p>{orderSummary.onlinePrice}</p>
+              </div>
+            )}
+            {formInput.storage && (
+              <div className="order-summary__row">
+                <p>Larger storage</p>
+                <p>{orderSummary.storagePrice}</p>
+              </div>
+            )}
+            {formInput.profile && (
+              <div className="order-summary__row">
+                <p>Customizable profile</p>
+                <p>{orderSummary.profilePrice}</p>
+              </div>
+            )}
           </div>
-          <hr></hr>
-          {formInput.online && (
-            <div className="order-summary__row">
-              <p>Online service</p>
-              <p>{orderSummary.onlinePrice}</p>
-            </div>
-          )}
-          {formInput.storage && (
-            <div className="order-summary__row">
-              <p>Larger storage</p>
-              <p>{orderSummary.storagePrice}</p>
-            </div>
-          )}
-          {formInput.profile && (
-            <div className="order-summary__row">
-              <p>Customizable profile</p>
-              <p>{orderSummary.profilePrice}</p>
-            </div>
-          )}
-          <div className="order-summary__row">
+          <div className="order-summary__row order-summary__total">
             <p>Total (per {formInput.rate.slice(0, -2)})</p>
             <p>{orderSummary.totalPrice}</p>
           </div>
-        </div>
+        </>
       )}
     </>
   );
