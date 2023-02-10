@@ -112,6 +112,10 @@ body {
   min-height: 100dvh;
 }
 
+button {
+  cursor: pointer;
+}
+
 .form-section {
   display: grid;
   grid-template-rows: 20vh 1fr 10vh;
@@ -168,9 +172,11 @@ body {
 .form-section__main {
   background-color: var(--color-neutral-100);
   border-radius: 1rem;
+  left: 50%;
   margin-inline: auto;
   padding: 2rem 1.5rem;
-  transform: translateY(-4rem);
+  position: absolute;
+  transform: translate(-50%, -4rem);
   width: calc(100% - 2rem);
 }
 
@@ -188,9 +194,17 @@ form {
 input[type="text"] {
   border-radius: 0.3rem;
   border: 0.1rem solid var(--color-neutral-500);
-  color: var(--color-neutral-500);
-  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-700);
+  font-weight: var(--font-weight-bold);
   padding: 0.5rem;
+}
+
+input[type="text"]::placeholder {
+  font-weight: var(--font-weight-medium);
+}
+
+input[type="text"]:focus-visible {
+  outline-color: var(--color-primary-500);
 }
 
 label {
@@ -204,6 +218,7 @@ label {
   border: 1px solid var(--color-neutral-400);
   border-radius: 0.5rem;
   color: var(--color-neutral-500);
+  cursor: pointer;
   display: grid;
   gap: 1rem;
   padding: 1rem;
@@ -269,6 +284,7 @@ label {
 
 .toggle-container label {
   color: var(--color-neutral-500);
+  cursor: pointer;
 }
 
 .toggle-container label.selected {
