@@ -101,15 +101,12 @@ function App() {
       });
     } else if (e.target.type === "button") {
       const newRate = formInput.rate === "monthly" ? "yearly" : "monthly";
-
       setFormInput((prevInput) => {
         return {
           ...prevInput,
           rate: newRate,
         };
       });
-
-      console.log(formInput);
     } else {
       const { value, name } = e.target;
       setFormInput((prevInput) => {
