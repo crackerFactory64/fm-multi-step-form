@@ -47,7 +47,27 @@ function App() {
   ];
 
   function next() {
-    if (currentPage <= 3) {
+    if (currentPage === 1) {
+      const inputs = [...document.querySelectorAll("input")];
+
+      inputs.forEach((input) => {
+        if (input.value === "") {
+          input.classList.add("error");
+        } else {
+          input.classList.remove("error");
+        }
+      });
+
+      const inputsWithErrors = inputs.filter((input) =>
+        input.classList.contains("error")
+      );
+
+      if (inputsWithErrors.length === 0) {
+        setCurrentPage(2);
+      }
+    }
+
+    if (currentPage > 1 && currentPage <= 3) {
       setCurrentPage(currentPage + 1);
     }
   }
