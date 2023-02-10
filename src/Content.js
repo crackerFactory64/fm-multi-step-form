@@ -2,10 +2,12 @@ import arcade from "./images/icon-arcade.svg";
 import advanced from "./images/icon-advanced.svg";
 import pro from "./images/icon-pro.svg";
 import checkmark from "./images/icon-checkmark.svg";
+import complete from "./images/icon-thank-you.svg";
 
 import React from "react";
 export default function Content(props) {
-  const { title, description, number, handleChange, formInput } = props;
+  const { isComplete, title, description, number, handleChange, formInput } =
+    props;
 
   function toTitleCase(string) {
     return string[0].toUpperCase() + string.slice(1);
@@ -72,11 +74,15 @@ export default function Content(props) {
 
   return (
     <>
-      <h1>{title}</h1>
-      <p>{description}</p>
+      {!isComplete && (
+        <>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </>
+      )}
       {/*STEP ONE*/}
 
-      {number === 1 && (
+      {!isComplete && number === 1 && (
         <form>
           <label htmlFor="name">
             Name
@@ -115,7 +121,7 @@ export default function Content(props) {
       )}
       {/*STEP TWO*/}
 
-      {number === 2 && (
+      {!isComplete && number === 2 && (
         <form>
           <label
             htmlFor="arcade"
@@ -232,7 +238,7 @@ export default function Content(props) {
       )}
       {/*STEP THREE*/}
 
-      {number === 3 && (
+      {!isComplete && number === 3 && (
         <form>
           <label
             htmlFor="online"
@@ -318,7 +324,7 @@ export default function Content(props) {
         </form>
       )}
       {/*STEP FOUR */}
-      {number === 4 && (
+      {!isComplete && number === 4 && (
         <>
           <div className="order-summary">
             <p className="order-summary__name">{orderSummary.orderName}</p>
@@ -351,6 +357,18 @@ export default function Content(props) {
             <p>{orderSummary.totalPrice}</p>
           </div>
         </>
+      )}
+      {/*COMPLETE*/}
+      {isComplete && (
+        <div className="complete">
+          <img src={complete} />
+          <h1>Thank you!</h1>
+          <p>
+            Thanks for confirming your subscription! We hope you have fun using
+            our platform. If you ever need support, please feel free to email us
+            at support@loremgaming.com.
+          </p>
+        </div>
       )}
     </>
   );

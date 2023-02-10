@@ -403,6 +403,16 @@ label {
   font-weight: var(--font-weight-bold);
 }
 
+.complete {
+  display: grid;
+  gap: 1rem;
+  line-height: 1.7;
+  margin: auto;
+  padding-block: 3rem;
+  place-items: center;
+  text-align: center;
+}
+
 .form-section__footer {
   background-color: var(--color-neutral-100);
   display: grid;

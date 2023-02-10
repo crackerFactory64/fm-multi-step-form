@@ -14,6 +14,7 @@ function App() {
     storage: false,
     profile: false,
   });
+  const [isComplete, setIsComplete] = React.useState(false);
 
   const paginationInfo = [
     { number: 1, title: "Your Info" },
@@ -48,8 +49,6 @@ function App() {
   function next() {
     if (currentPage <= 3) {
       setCurrentPage(currentPage + 1);
-    } else {
-      window.location.reload();
     }
   }
 
@@ -57,6 +56,10 @@ function App() {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
+  }
+
+  function confirm() {
+    setIsComplete(true);
   }
 
   function handleChange(e) {
@@ -99,6 +102,7 @@ function App() {
         description={page.description}
         handleChange={(e) => handleChange(e)}
         formInput={formInput}
+        isComplete={isComplete}
       />
     );
   });
@@ -113,20 +117,24 @@ function App() {
           {contentEl.filter((content) => content.props.number === currentPage)}
         </main>
       </div>
-      <footer className="form-section__footer">
-        <button
-          className={currentPage > 1 ? "footer__back" : "footer__back hidden"}
-          onClick={back}
-        >
-          Go Back
-        </button>
-        <button
-          className={currentPage <= 3 ? "footer__next" : "footer__next submit"}
-          onClick={next}
-        >
-          {currentPage <= 3 ? "Next Step" : "Confirm"}
-        </button>
-      </footer>
+      {!isComplete && (
+        <footer className="form-section__footer">
+          <button
+            className={currentPage > 1 ? "footer__back" : "footer__back hidden"}
+            onClick={back}
+          >
+            Go Back
+          </button>
+          <button
+            className={
+              currentPage <= 3 ? "footer__next" : "footer__next submit"
+            }
+            onClick={currentPage === 4 ? confirm : next}
+          >
+            {currentPage <= 3 ? "Next Step" : "Confirm"}
+          </button>
+        </footer>
+      )}
     </section>
   );
 }
