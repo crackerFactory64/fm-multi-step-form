@@ -46,23 +46,27 @@ function App() {
     },
   ];
 
+  function validateStepOne() {
+    const inputs = [...document.querySelectorAll("input")];
+
+    inputs.forEach((input) => {
+      if (input.value === "") {
+        input.classList.add("error");
+      } else {
+        input.classList.remove("error");
+      }
+    });
+
+    const inputsWithErrors = inputs.filter((input) =>
+      input.classList.contains("error")
+    );
+
+    return inputsWithErrors.length === 0;
+  }
+
   function next() {
     if (currentPage === 1) {
-      const inputs = [...document.querySelectorAll("input")];
-
-      inputs.forEach((input) => {
-        if (input.value === "") {
-          input.classList.add("error");
-        } else {
-          input.classList.remove("error");
-        }
-      });
-
-      const inputsWithErrors = inputs.filter((input) =>
-        input.classList.contains("error")
-      );
-
-      if (inputsWithErrors.length === 0) {
+      if (validateStepOne()) {
         setCurrentPage(2);
       }
     }

@@ -191,10 +191,35 @@ form {
   margin-block-start: 1.5rem;
 }
 
+label {
+  color: var(--color-primary-700);
+  display: grid;
+  gap: 0.25rem;
+}
+
+.text-label__row {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.text-label__error-msg {
+  color: var(--color-primary-400);
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-bold);
+  margin-block: auto;
+  margin-inline-start: auto;
+  visibility: hidden;
+}
+
+.text-label:has(.error):has(input:placeholder-shown) .text-label__error-msg {
+  visibility: visible;
+}
+
 input[type="text"] {
   border-radius: 0.3rem;
   border: 0.1rem solid var(--color-neutral-500);
   color: var(--color-primary-700);
+  cursor: pointer;
   font-weight: var(--font-weight-bold);
   padding: 0.5rem;
 }
@@ -207,10 +232,8 @@ input[type="text"]:focus-visible {
   outline-color: var(--color-primary-500);
 }
 
-label {
-  color: var(--color-primary-700);
-  display: grid;
-  gap: 0.25rem;
+input[type="text"]:placeholder-shown.error {
+  border-color: var(--color-primary-400);
 }
 
 .radio-label,

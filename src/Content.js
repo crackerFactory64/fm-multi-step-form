@@ -84,8 +84,11 @@ export default function Content(props) {
 
       {!isComplete && number === 1 && (
         <form>
-          <label htmlFor="name">
-            Name
+          <label htmlFor="name" className="text-label">
+            <div className="text-label__row">
+              <p>Name</p>
+              <p className="text-label__error-msg">This field is required</p>
+            </div>
             <input
               name="name"
               id="name"
@@ -95,8 +98,11 @@ export default function Content(props) {
               type="text"
             ></input>
           </label>
-          <label htmlFor="email">
-            Email Address
+          <label htmlFor="email" className="text-label">
+            <div className="text-label__row">
+              <p>Email Address</p>
+              <p className="text-label__error-msg">This field is required</p>
+            </div>
             <input
               name="email"
               id="email"
@@ -106,8 +112,11 @@ export default function Content(props) {
               type="text"
             ></input>
           </label>
-          <label htmlFor="name">
-            Phone Number
+          <label htmlFor="phone" className="text-label">
+            <div className="text-label__row">
+              <p>Phone Number</p>
+              <p className="text-label__error-msg">This field is required</p>
+            </div>
             <input
               name="phone"
               id="phone"
