@@ -93,8 +93,10 @@ export default function Content(props) {
         <form>
           <label htmlFor="name" className="text-label">
             <span className="text-label__row">
-              <p>Name</p>
-              <p className="text-label__error-msg">This field is required</p>
+              <span>Name</span>
+              <span className="text-label__error-msg">
+                This field is required
+              </span>
             </span>
             <input
               name="name"
@@ -107,8 +109,10 @@ export default function Content(props) {
           </label>
           <label htmlFor="email" className="text-label">
             <span className="text-label__row">
-              <p>Email Address</p>
-              <p className="text-label__error-msg">This field is required</p>
+              <span>Email Address</span>
+              <span className="text-label__error-msg">
+                This field is required
+              </span>
             </span>
             <input
               name="email"
@@ -121,8 +125,10 @@ export default function Content(props) {
           </label>
           <label htmlFor="phone" className="text-label">
             <span className="text-label__row">
-              <p>Phone Number</p>
-              <p className="text-label__error-msg">This field is required</p>
+              <span>Phone Number</span>
+              <span className="text-label__error-msg">
+                This field is required
+              </span>
             </span>
             <input
               name="phone"
@@ -148,10 +154,10 @@ export default function Content(props) {
             }
           >
             <span className="radio-label__content">
-              <p className="radio-label__name">Arcade</p>
-              <p className="radio-label__price">
+              <span className="radio-label__name">Arcade</span>
+              <span className="radio-label__price">
                 {formInput.rate === "monthly" ? "$9/mo" : "$90/yr"}
-              </p>
+              </span>
               {formInput.rate === "yearly" && <small>2 months free</small>}
             </span>
             <span className="radio-container">
@@ -175,10 +181,10 @@ export default function Content(props) {
             }
           >
             <span className="radio-label__content">
-              <p className="radio-label__name">Advanced</p>
-              <p className="radio-label__price">
+              <span className="radio-label__name">Advanced</span>
+              <span className="radio-label__price">
                 {formInput.rate === "monthly" ? "$12/mo" : "$120/yr"}
-              </p>
+              </span>
               {formInput.rate === "yearly" && <small>2 months free</small>}
             </span>
             <span className="radio-container">
@@ -200,10 +206,10 @@ export default function Content(props) {
             }
           >
             <span className="radio-label__content">
-              <p className="radio-label__name">Pro</p>
-              <p className="radio-label__price">
+              <span className="radio-label__name">Pro</span>
+              <span className="radio-label__price">
                 {formInput.rate === "monthly" ? "$15/mo" : "$150/yr"}
-              </p>
+              </span>
               {formInput.rate === "yearly" && <small>2 months free</small>}
             </span>
             <span className="radio-container">
@@ -276,14 +282,14 @@ export default function Content(props) {
               </span>
             </span>
             <span>
-              <p className="checkbox-label__name">Online service</p>
-              <p className="checkbox-label__desc">
+              <span className="checkbox-label__name">Online service</span>
+              <span className="checkbox-label__desc">
                 Access to multiplayer games
-              </p>
+              </span>
             </span>
-            <p className="checkbox-label__price">
+            <span className="checkbox-label__price">
               {formInput.rate === "monthly" ? "+$1/mo" : "+$10/yr"}
-            </p>
+            </span>
           </label>
 
           <label
@@ -304,12 +310,14 @@ export default function Content(props) {
               </span>
             </span>
             <span>
-              <p className="checkbox-label__name">Larger storage</p>
-              <p className="checkbox-label__desc">Extra 1TB of cloud save</p>
+              <span className="checkbox-label__name">Larger storage</span>
+              <span className="checkbox-label__desc">
+                Extra 1TB of cloud save
+              </span>
             </span>
-            <p className="checkbox-label__price">
+            <span className="checkbox-label__price">
               {formInput.rate === "monthly" ? "+$2/mo" : "+$20/yr"}
-            </p>
+            </span>
           </label>
 
           <label
@@ -330,14 +338,14 @@ export default function Content(props) {
               </span>
             </span>
             <span>
-              <p className="checkbox-label__name">Customizable profile</p>
-              <p className="checkbox-label__desc">
+              <span className="checkbox-label__name">Customizable profile</span>
+              <span className="checkbox-label__desc">
                 Custom theme on your profile
-              </p>
+              </span>
             </span>
-            <p className="checkbox-label__price">
+            <span className="checkbox-label__price">
               {formInput.rate === "monthly" ? "+$2/mo" : "+$20/yr"}
-            </p>
+            </span>
           </label>
         </form>
       )}
