@@ -129,7 +129,7 @@ function App() {
     );
   });
 
-  const contentEl = pageContent.map((page) => {
+  const contentElement = pageContent.map((page) => {
     return (
       <Content
         key={page.number}
@@ -145,14 +145,16 @@ function App() {
   });
 
   return (
-    <section className="form-section">
+    <main className="form-section">
       <header className="form-section__header">
         <ul className="header__pagination">{paginationElement}</ul>
       </header>
       <div>
-        <main className="form-section__main">
-          {contentEl.filter((content) => content.props.number === currentPage)}
-        </main>
+        <section className="form-section__main">
+          {contentElement.filter(
+            (content) => content.props.number === currentPage
+          )}
+        </section>
       </div>
       {!isComplete && (
         <footer className="form-section__footer">
@@ -172,7 +174,7 @@ function App() {
           </button>
         </footer>
       )}
-    </section>
+    </main>
   );
 }
 

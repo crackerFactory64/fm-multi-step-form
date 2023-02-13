@@ -360,7 +360,7 @@ input[type="text"]:placeholder-shown.error {
   padding: var(--space);
 }
 
-.checkbox-label > div {
+.checkbox-label > span {
   display: grid;
 }
 
@@ -594,7 +594,8 @@ input[type="text"]:placeholder-shown.error {
   }
 
   .checkbox-label {
-    padding: 1.5rem;
+    gap: 1.33rem;
+    padding: 1rem 1.5rem;
   }
 
   .form-section__footer {

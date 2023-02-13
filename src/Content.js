@@ -92,10 +92,10 @@ export default function Content(props) {
       {!isComplete && number === 1 && (
         <form>
           <label htmlFor="name" className="text-label">
-            <div className="text-label__row">
+            <span className="text-label__row">
               <p>Name</p>
               <p className="text-label__error-msg">This field is required</p>
-            </div>
+            </span>
             <input
               name="name"
               id="name"
@@ -106,10 +106,10 @@ export default function Content(props) {
             ></input>
           </label>
           <label htmlFor="email" className="text-label">
-            <div className="text-label__row">
+            <span className="text-label__row">
               <p>Email Address</p>
               <p className="text-label__error-msg">This field is required</p>
-            </div>
+            </span>
             <input
               name="email"
               id="email"
@@ -120,10 +120,10 @@ export default function Content(props) {
             ></input>
           </label>
           <label htmlFor="phone" className="text-label">
-            <div className="text-label__row">
+            <span className="text-label__row">
               <p>Phone Number</p>
               <p className="text-label__error-msg">This field is required</p>
-            </div>
+            </span>
             <input
               name="phone"
               id="phone"
@@ -147,14 +147,14 @@ export default function Content(props) {
                 : "radio-label"
             }
           >
-            <div className="radio-label__content">
+            <span className="radio-label__content">
               <p className="radio-label__name">Arcade</p>
               <p className="radio-label__price">
                 {formInput.rate === "monthly" ? "$9/mo" : "$90/yr"}
               </p>
               {formInput.rate === "yearly" && <small>2 months free</small>}
-            </div>
-            <div className="radio-container">
+            </span>
+            <span className="radio-container">
               <img src={arcade} alt="" />
               <input
                 type="radio"
@@ -163,7 +163,7 @@ export default function Content(props) {
                 id="arcade"
                 onChange={handleChange}
               ></input>
-            </div>
+            </span>
           </label>
 
           <label
@@ -174,14 +174,14 @@ export default function Content(props) {
                 : "radio-label"
             }
           >
-            <div className="radio-label__content">
+            <span className="radio-label__content">
               <p className="radio-label__name">Advanced</p>
               <p className="radio-label__price">
                 {formInput.rate === "monthly" ? "$12/mo" : "$120/yr"}
               </p>
               {formInput.rate === "yearly" && <small>2 months free</small>}
-            </div>
-            <div className="radio-container">
+            </span>
+            <span className="radio-container">
               <img src={advanced} alt="" />
               <input
                 type="radio"
@@ -190,7 +190,7 @@ export default function Content(props) {
                 id="advanced"
                 onChange={handleChange}
               ></input>
-            </div>
+            </span>
           </label>
 
           <label
@@ -199,14 +199,14 @@ export default function Content(props) {
               formInput.plan === "pro" ? "radio-label selected" : "radio-label"
             }
           >
-            <div className="radio-label__content">
+            <span className="radio-label__content">
               <p className="radio-label__name">Pro</p>
               <p className="radio-label__price">
                 {formInput.rate === "monthly" ? "$15/mo" : "$150/yr"}
               </p>
               {formInput.rate === "yearly" && <small>2 months free</small>}
-            </div>
-            <div className="radio-container">
+            </span>
+            <span className="radio-container">
               <img src={pro} alt="" />
               <input
                 type="radio"
@@ -215,7 +215,7 @@ export default function Content(props) {
                 id="pro"
                 onChange={handleChange}
               ></input>
-            </div>
+            </span>
           </label>
           <div className="toggle-container">
             <label
@@ -264,23 +264,23 @@ export default function Content(props) {
               formInput.online ? "checkbox-label selected" : "checkbox-label"
             }
           >
-            <div className="checkmark">
+            <span className="checkmark">
               <input
                 type="checkbox"
                 name="online"
                 id="online"
                 onChange={handleChange}
               />
-              <div className="checkmark__checkbox">
+              <span className="checkmark__checkbox">
                 <img src={checkmark} alt="" />
-              </div>
-            </div>
-            <div>
+              </span>
+            </span>
+            <span>
               <p className="checkbox-label__name">Online service</p>
               <p className="checkbox-label__desc">
                 Access to multiplayer games
               </p>
-            </div>
+            </span>
             <p className="checkbox-label__price">
               {formInput.rate === "monthly" ? "+$1/mo" : "+$10/yr"}
             </p>
@@ -292,21 +292,21 @@ export default function Content(props) {
               formInput.storage ? "checkbox-label selected" : "checkbox-label"
             }
           >
-            <div className="checkmark">
+            <span className="checkmark">
               <input
                 type="checkbox"
                 name="storage"
                 id="storage"
                 onChange={handleChange}
               />
-              <div className="checkmark__checkbox">
+              <span className="checkmark__checkbox">
                 <img src={checkmark} alt="" />
-              </div>
-            </div>
-            <div>
+              </span>
+            </span>
+            <span>
               <p className="checkbox-label__name">Larger storage</p>
               <p className="checkbox-label__desc">Extra 1TB of cloud save</p>
-            </div>
+            </span>
             <p className="checkbox-label__price">
               {formInput.rate === "monthly" ? "+$2/mo" : "+$20/yr"}
             </p>
@@ -318,23 +318,23 @@ export default function Content(props) {
               formInput.profile ? "checkbox-label selected" : "checkbox-label"
             }
           >
-            <div className="checkmark">
+            <span className="checkmark">
               <input
                 type="checkbox"
                 name="profile"
                 id="profile"
                 onChange={handleChange}
               />
-              <div className="checkmark__checkbox">
+              <span className="checkmark__checkbox">
                 <img src={checkmark} alt="" />
-              </div>
-            </div>
-            <div>
+              </span>
+            </span>
+            <span>
               <p className="checkbox-label__name">Customizable profile</p>
               <p className="checkbox-label__desc">
                 Custom theme on your profile
               </p>
-            </div>
+            </span>
             <p className="checkbox-label__price">
               {formInput.rate === "monthly" ? "+$2/mo" : "+$20/yr"}
             </p>
